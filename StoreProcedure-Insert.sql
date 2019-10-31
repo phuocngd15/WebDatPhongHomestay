@@ -162,7 +162,7 @@ THROW 50001, 'Nhap sai dieu kien!!!!.', 1;
 --drop proc spInsertForms_Product;
 --go
 
---create proc spInsertForms_Product_Type1
+--create proc spInsertForms_Product_Type1   //them và
 	
 --@FormID	bigint	,
 --@ProductID	int,
