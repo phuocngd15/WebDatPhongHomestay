@@ -102,8 +102,8 @@ create proc spInsertForms
 
 @Type	char(3)	,
 @CreatedDate	datetime,	
-@CreatedPersonID	int	
-		
+@CreatedPersonID	int	,
+@FormID int output
 as
 begin
 insert Forms
