@@ -75,7 +75,7 @@ go
  IF OBJECT_ID('Form_ProDuces_INSERT_UPDATE') IS NOT NULL
  DROP TRIGGER Form_ProDuces_INSERT_UPDATE;
 GO
-
+-- trigger chạy tính tiền cái bill lại mỗi lần produc đc insert
 CREATE TRIGGER Form_ProDuces_INSERT_UPDATE
 ON Forms_Produces
 AFTER INSERT,UPDATE
