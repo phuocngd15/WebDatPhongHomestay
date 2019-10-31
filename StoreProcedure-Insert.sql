@@ -12,9 +12,9 @@ create proc spInsertGroupPurpose
 as
 begin
 insert GroupPurpose
-values (@GroupPurposeName);
+values (@GroupPurposeName)
 end
-
+GO
 exec spInsertGroupPurpose @GroupPurposeName='afhfd';
 -- create proc Purpose
 if OBJECT_ID('spInsertPurpose') is not null
@@ -37,7 +37,9 @@ end
 
 exec spInsertPurpose 
 @PurposeName= 'hsg',
-@GroupPurposeID =5
+@GroupPurposeID =5;
+go
+
 
 --create proc Employess
 if OBJECT_ID('spInsertEmployees') is not null
@@ -55,6 +57,8 @@ begin
 insert Employees
 values (@EmployeeName,@PhoneNumber,@BirthDay);
 end	
+go
+
 --create Customers
 if OBJECT_ID('spInsertCustomers') is not null
 drop proc spInsertCustomers;
@@ -72,6 +76,7 @@ begin
 insert Customers
 values (@CustomerName,@PhoneNumber,@BirthDay);
 end	
+GO
 
 --create Brands
 if OBJECT_ID('spInsertBrands') is not null
@@ -86,7 +91,9 @@ begin
 insert Brands
 values (@BrandName,@Description);
 end	
-	
+GO
+
+
 if OBJECT_ID('spInsertForms') is not null
 drop proc spInsertForms;
 go
@@ -102,6 +109,7 @@ begin
 insert Forms
 values (@Type,@CreatedDate,@CreatedPersonID);
 end	
+GO
 
 --create proc BIll
 if OBJECT_ID('spInsertBill') is not null
@@ -129,7 +137,9 @@ exec spInsertBill
 @FormID=2,
 @TotalCost=10,
 @DiscountPercent=0,
-@CustomerID=0
+@CustomerID=0;
+GO
+
 
 --create proc products
 if OBJECT_ID('spInsertProduct') is not null
@@ -155,7 +165,8 @@ and (exists (select PurposeID from Purpose where PurposeID = @PurposeID) )
 insert Products
 values (@ProductName,@Unit,@SellingPrice,@BuyingPrice,@ShelvesID,@PurposeID,@BrandID,@Number,@Description);
 THROW 50001, 'Nhap sai dieu kien!!!!.', 1;
-
+end
+GO
 
 --create proc Form_Products
 --if OBJECT_ID('spInsertForms_Product') is not null
