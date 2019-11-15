@@ -1,0 +1,8 @@
+C:\Users\JackieLeIV\source\repos\BlazorApp10\BlazorApp10\Shared\bin\Debug\netstandard2.0\BlazorApp10.Shared.deps.json
+C:\Users\JackieLeIV\source\repos\BlazorApp10\BlazorApp10\Shared\bin\Debug\netstandard2.0\BlazorApp10.Shared.dll
+C:\Users\JackieLeIV\source\repos\BlazorApp10\BlazorApp10\Shared\bin\Debug\netstandard2.0\BlazorApp10.Shared.pdb
+C:\Users\JackieLeIV\source\repos\BlazorApp10\BlazorApp10\Shared\obj\Debug\netstandard2.0\BlazorApp10.Shared.csprojAssemblyReference.cache
+C:\Users\JackieLeIV\source\repos\BlazorApp10\BlazorApp10\Shared\obj\Debug\netstandard2.0\BlazorApp10.Shared.AssemblyInfoInputs.cache
+C:\Users\JackieLeIV\source\repos\BlazorApp10\BlazorApp10\Shared\obj\Debug\netstandard2.0\BlazorApp10.Shared.AssemblyInfo.cs
+C:\Users\JackieLeIV\source\repos\BlazorApp10\BlazorApp10\Shared\obj\Debug\netstandard2.0\BlazorApp10.Shared.dll
+C:\Users\JackieLeIV\source\repos\BlazorApp10\BlazorApp10\Shared\obj\Debug\netstandard2.0\BlazorApp10.Shared.pdb
