@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UserSecretsId>aspnet-CaChepCosmeticMVC2-F00788EB-0787-4A71-838E-D7A61E7E8554</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\Migrations\20191201161128_ver1.cs" />
+    <Compile Remove="Data\Migrations\20191201161128_ver1.Designer.cs" />
+    <Compile Remove="Data\Migrations\20191201161626_ver2.cs" />
+    <Compile Remove="Data\Migrations\20191201161626_ver2.Designer.cs" />
+    <Compile Remove="Data\Migrations\20191201161705_ver2.cs" />
+    <Compile Remove="Data\Migrations\20191201161705_ver2.Designer.cs" />
+    <Compile Remove="Data\Migrations\20191201162205_ver2.cs" />
+    <Compile Remove="Data\Migrations\20191201162205_ver2.Designer.cs" />
+    <Compile Remove="Data\Migrations\20191201163032_ver3.cs" />
+    <Compile Remove="Data\Migrations\20191201163032_ver3.Designer.cs" />
+    <Compile Remove="Data\Migrations\20191202105738_ver4.cs" />
+    <Compile Remove="Data\Migrations\20191202105738_ver4.Designer.cs" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Controllers\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\" />
+    <Folder Include="Areas\Customer\Data\" />
+    <Folder Include="Areas\Customer\Models\" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Include="wwwroot\webfonts\fa-brands-400.svg" />
+    <None Include="wwwroot\webfonts\fa-brands-400.woff2" />
+    <None Include="wwwroot\webfonts\fa-regular-400.svg" />
+    <None Include="wwwroot\webfonts\fa-regular-400.woff2" />
+    <None Include="wwwroot\webfonts\fa-solid-900.svg" />
+    <None Include="wwwroot\webfonts\fa-solid-900.woff2" />
+  </ItemGroup>
+
+</Project>
