@@ -1,0 +1,45 @@
+﻿@model IEnumerable<CaChepFinal2.Data.DataModel.TrangThai>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="row">
+        <div class="col-6">
+            <h2 class="text-info"> Trạng Thái Phòng </h2>
+        </div>
+        <div class="col-6 text-right">
+            <a asp-action="Create" class="btn btn-info"><i class="fas fa-plus"> </i>&nbsp; Thêm Mới</a>
+        </div>
+    </div>
+<table class="table table-striped border">
+    <thead>
+        <tr class="table-info">
+            <th>
+                @Html.DisplayNameFor(model => model.TrangThaiName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrangThaiName)
+            </td>
+            <td>
+                <a type=" button" class="btn btn-primary" href="@Url.Action("Edit/" + item.Id).Replace("%2F", "/")">
+                    <i class="fas fa-edit"></i>
+                </a>
+                <a type=" button" class="btn btn-success" href="@Url.Action("Details/" + item.Id).Replace("%2F", "/")">
+                    <i class="fas fa-list"></i>
+                </a>
+                <a type=" button" class="btn btn-danger" href="@Url.Action("Delete/"+item.Id).Replace("%2F", "/")">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

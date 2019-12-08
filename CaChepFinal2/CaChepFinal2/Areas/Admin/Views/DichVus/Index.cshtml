@@ -1,0 +1,76 @@
+﻿@model IEnumerable<CaChepFinal2.Data.DataModel.DichVu>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-6">
+        <h2 class="text-info"> Dịch Vụ </h2>
+    </div>
+    <div class="col-6 text-right">
+        <a asp-action="Create" class="btn btn-info"><i class="fas fa-plus"> </i>&nbsp; Thêm DỊch Vụ</a>
+    </div>
+</div>
+<table class="table table-striped border">
+    <thead>
+        <tr class="table-primary">
+            <th>
+                @Html.DisplayNameFor(model => model.DichVuName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShortDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InStock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoaiDv)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DichVuName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShortDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ImageUrl)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InStock)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LoaiDv.LoaiDichVuName)
+                </td>
+                <td>
+                    <a type=" button" class="btn btn-primary" href="@Url.Action("Edit/" + item.Id).Replace("%2F", "/")">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    <a type=" button" class="btn btn-success" href="@Url.Action("Details/" + item.Id).Replace("%2F", "/")">
+                        <i class="fas fa-list"></i>
+                    </a>
+                    <a type=" button" class="btn btn-danger" href="@Url.Action("Delete/"+item.Id).Replace("%2F", "/")">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
