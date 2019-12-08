@@ -1,6 +1,6 @@
-﻿﻿--1-Table LoaiPhong
-use CaChepFinal3
-go
+﻿use CaChepFinal3
+go;
+--1-Table LoaiPhong
 
 --1.spGetLoaiPhong
 IF OBJECT_ID(N'dbo.spGetLoaiPhong', N'P') IS NOT NULL DROP PROC dbo.spGetLoaiPhong;
@@ -464,7 +464,7 @@ GO
 CREATE PROC dbo.SearchDatPhongsBySomthing
     @Cmnd as NVARCHAR(255) = NULL,
     @Sdt as  NVARCHAR(255) = NULL,
-    @ThoiGianNhanPhongDuKien as  varchar = NULL
+    @ThoiGianNhanPhongDuKien as  date = NULL
 AS
 declare @date date = CONVERT(VARCHAR(10),@ThoiGianNhanPhongDuKien, 111);
 DECLARE @sql AS NVARCHAR(1000);
@@ -487,7 +487,7 @@ EXEC sp_executesql
 	@Dt = @date;
 go
 
-EXEC dbo.SearchDatPhongsBySomthing   '2019-12-03 00:00:00.0000000'
+EXEC dbo.SearchDatPhongsBySomthing @ThoiGianNhanPhongDuKien ='2019-12-04 00:00:00.0000000'
 --2 Dynamic sort
 USE CaChepFinal3;
 IF OBJECT_ID(N'dbo.GetSortedDatPhongsBySomthing', N'P') 

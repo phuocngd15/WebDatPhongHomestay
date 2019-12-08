@@ -63,10 +63,10 @@ namespace CaChepFinal2.Areas.Admin.Controllers
             if (reservation.CMND != null && reservation.ThoiGianNhan==default)
                 listdatphong = _context.DatPhongs.FromSqlRaw($"EXECUTE dbo.SearchDatPhongsBySomthing @Cmnd ", cmndSqlParameter);
             else if (reservation.CMND == null && reservation.ThoiGianNhan != default)
-                listdatphong = _context.DatPhongs.FromSqlRaw($"EXECUTE dbo.SearchDatPhongsBySomthing @ThoiGianNhanPhongDuKien = '{reservation.ThoiGianNhan.Date.ToShortDateString()}' ");
+                listdatphong = _context.DatPhongs.FromSqlRaw($"EXECUTE dbo.SearchDatPhongsBySomthing @ThoiGianNhanPhongDuKien = '{reservation.ThoiGianNhan.Date}' ");
             else if(reservation.CMND != null && reservation.ThoiGianNhan != default)
             {
-                listdatphong = _context.DatPhongs.FromSqlRaw($"EXECUTE dbo.SearchDatPhongsBySomthing @Cmnd, @ThoiGianNhanPhongDuKien ", cmndSqlParameter, thoiSqlParameter);
+                listdatphong = _context.DatPhongs.FromSqlRaw($"EXECUTE dbo.SearchDatPhongsBySomthing @Cmnd, @ThoiGianNhanPhongDuKien = '{reservation.ThoiGianNhan.Date}' ", cmndSqlParameter);
             }
 
 

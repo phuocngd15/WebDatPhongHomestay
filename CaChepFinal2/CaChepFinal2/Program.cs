@@ -15,7 +15,20 @@ namespace CaChepFinal2
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
-            
+            ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
+            DocumentModel document = new DocumentModel();
+
+            Section section = new Section(document);
+            document.Sections.Add(section);
+
+            Paragraph paragraph = new Paragraph(document);
+            section.Blocks.Add(paragraph);
+
+            Run run = new Run(document, "Hello World!");
+            paragraph.Inlines.Add(run);
+
+            document.Save("Hello World.docx");
             // reset database
             /* update-database 00000000000000_CreateIdentitySchema
         remove-migration
