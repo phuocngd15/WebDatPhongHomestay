@@ -1,4 +1,4 @@
-﻿--1-Table LoaiPhong
+﻿﻿--1-Table LoaiPhong
 use CaChepFinal3
 go
 
@@ -487,8 +487,7 @@ EXEC sp_executesql
 	@Dt = @date;
 go
 
-
-EXEC dbo.SearchDatPhongsBySomthing  @ThoiGianNhanPhongDuKien = '2019-12-03'
+EXEC dbo.SearchDatPhongsBySomthing   '2019-12-03 00:00:00.0000000'
 --2 Dynamic sort
 USE CaChepFinal3;
 IF OBJECT_ID(N'dbo.GetSortedDatPhongsBySomthing', N'P') 
@@ -698,7 +697,30 @@ GO
 
 EXECUTE dbo.TimPhongDangDcDat '2019-12-12' ,  '2020-12-12'
 GO
-
+--TimPhongTrongLienTuc
+IF EXISTS (
+SELECT *
+    FROM INFORMATION_SCHEMA.ROUTINES
+WHERE SPECIFIC_SCHEMA = N'dbo'
+    AND SPECIFIC_NAME = N'TimPhongLienTuc'
+    AND ROUTINE_TYPE = N'PROCEDURE'
+)
+DROP PROCEDURE dbo.TimPhongLienTuc
+GO
+CREATE PROCEDURE dbo.TimPhongLienTuc
+    @ThoiGianNhan DATETIME = NULL,
+    @ThoiGianTra DATETIME = NULL
+AS
+    -- body of the stored procedure
+  SELECT * from Phongs WHERE Id not IN
+  (SELECT distinct  PhongId FROM
+    ChiTietDatPhongs
+    WHERE @ThoiGianNhan <=ThoiGian and ThoiGian <=@ThoiGianTra)   
+    
+    
+GO
+EXECUTE dbo.TimPhongLienTuc '2019-12-12' ,  '2020-12-12'
+GO
 
 --10- Function tổng tiền dịch vụ của 1 phiếu đặt phòng
 IF OBJECT_ID('fnTongTienDichVuByDatPhongId') IS NOT NULL
