@@ -58,7 +58,7 @@ namespace CaChepFinal2.Areas.Admin.Controllers
             }
 
             var cmndSqlParameter = new SqlParameter {ParameterName = "@Cmnd", SqlDbType = SqlDbType.NVarChar, SqlValue = reservation.CMND};
-            var thoiSqlParameter = new SqlParameter {ParameterName = "@ThoiGianNhanPhongDuKien", SqlDbType = SqlDbType.VarChar, SqlValue = reservation.ThoiGianNhan.Date.ToShortDateString()};
+            var thoiSqlParameter = new SqlParameter {ParameterName = "@ThoiGianNhanPhongDuKien", SqlDbType = SqlDbType.VarChar, SqlValue = reservation.ThoiGianNhan.Date};
             
             if (reservation.CMND != null && reservation.ThoiGianNhan==default)
                 listdatphong = _context.DatPhongs.FromSqlRaw($"EXECUTE dbo.SearchDatPhongsBySomthing @Cmnd ", cmndSqlParameter);
