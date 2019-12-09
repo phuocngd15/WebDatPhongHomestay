@@ -789,4 +789,38 @@ As
 
 
 --TRANSACTION
+--transaction DatPhongs,ChiTietDAtPhong
+declare @Tenkh nvarchar(max);
+declare @DiaChi nvarchar(max);
+declare @CMND nvarchar(max);
+declare @SDT nvarchar(max);
+declare @TienCoc nvarchar(max);
+declare @TongTien money;
+declare @account int;
+declare @AccountId int;
+declare @idPhong int ;
+declare @ThoiGian datetime2(7) ;
+declare @TrangThai int ;
+declare @id int ;
+declare @NgayNhan datetime2(7) ='2019-12-9';
+declare @NgayTra datetime2(7)='2019-12-11';
+begin try
+	begin tran
+		insert DatPhongs
+		values ('T','as','13','13231',10000,@NgayNhan,@NgayTra,100000,null,null);
+		set @id=@@IDENTITY 
+		while @NgayNhan <=@NgayTra		
+		begin 	
+			insert ChiTietDatPhongs
+			values (@id,1,@NgayNhan,1)	;
+			set @NgayNhan=(DATEADD(day, 1, @NgayNhan))
+		end
+	commit tran
+	print 'transaction committed';
+end try
+begin catch 
+ print 'error when inserting, rolling back transaction';
+ rollback tran; 
+end catch
 --AddChiTietDatPhong
+

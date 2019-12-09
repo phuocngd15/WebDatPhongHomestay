@@ -1,29 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "E:\\CSDL\\WebDatPhongHomestay\\CaChepFinal2\\CaChepFinal2\\CaChepFinal2.csproj": {}
+    "C:\\Users\\JackieLeIV\\Desktop\\Tuyen\\TotNhat\\CaChepFinal2\\CaChepFinal2\\CaChepFinal2.csproj": {}
   },
   "projects": {
-    "E:\\CSDL\\WebDatPhongHomestay\\CaChepFinal2\\CaChepFinal2\\CaChepFinal2.csproj": {
+    "C:\\Users\\JackieLeIV\\Desktop\\Tuyen\\TotNhat\\CaChepFinal2\\CaChepFinal2\\CaChepFinal2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\CSDL\\WebDatPhongHomestay\\CaChepFinal2\\CaChepFinal2\\CaChepFinal2.csproj",
+        "projectUniqueName": "C:\\Users\\JackieLeIV\\Desktop\\Tuyen\\TotNhat\\CaChepFinal2\\CaChepFinal2\\CaChepFinal2.csproj",
         "projectName": "CaChepFinal2",
-        "projectPath": "E:\\CSDL\\WebDatPhongHomestay\\CaChepFinal2\\CaChepFinal2\\CaChepFinal2.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "E:\\CSDL\\WebDatPhongHomestay\\CaChepFinal2\\CaChepFinal2\\obj\\",
+        "projectPath": "C:\\Users\\JackieLeIV\\Desktop\\Tuyen\\TotNhat\\CaChepFinal2\\CaChepFinal2\\CaChepFinal2.csproj",
+        "packagesPath": "C:\\Users\\JackieLeIV\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\JackieLeIV\\Desktop\\Tuyen\\TotNhat\\CaChepFinal2\\CaChepFinal2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\JackieLeIV\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.1.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\DevExpress 19.1\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -116,7 +118,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
