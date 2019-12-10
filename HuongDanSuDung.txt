@@ -1,5 +1,0 @@
--Bước 1: Kiểm tra xem có tồn tại database CaChepFinal3 trong sql k.
------Nếu có thì xóa
--Bước 2: mở bài .sln 
-	Chạy update-database
---Bước 3: mở sql chạy file script SP
