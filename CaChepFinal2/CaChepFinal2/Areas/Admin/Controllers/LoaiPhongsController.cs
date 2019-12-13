@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CaChepFinal2.Data;
 using CaChepFinal2.Data.DataModel;
 using Microsoft.Data.SqlClient;
 using Microsoft.AspNetCore.Authorization;
 using CaChepFinal2.Utility;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Syncfusion.EJ2.Linq;
+
 
 namespace CaChepFinal2.Areas.Admin.Controllers
 {
@@ -31,7 +25,7 @@ namespace CaChepFinal2.Areas.Admin.Controllers
         // GET: Admin/LoaiPhongs
         public IActionResult Index()
         {
-            return View( _context.LoaiPhongs.FromSqlRaw("EXECUTE dbo.spGetLoaiPhong"));
+            return View(_context.LoaiPhongs.FromSqlRaw("EXECUTE dbo.spGetLoaiPhong"));
         }
 
         // GET: Admin/LoaiPhongs/Details/5
@@ -60,13 +54,13 @@ namespace CaChepFinal2.Areas.Admin.Controllers
         // POST: Admin/LoaiPhongs/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("Id,Name")] LoaiPhong loaiPhong)
+        public IActionResult Create([Bind("Id,LoaiPhongName")] LoaiPhong loaiPhong)
         {
             if (ModelState.IsValid)
             {
-                           var loaiphongName = new SqlParameter("@Ten", loaiPhong.LoaiPhongName);
-                 _context.Database.ExecuteSqlRaw("EXEC dbo.spAddLoaiPhong @Ten", loaiphongName);
-             //    _context.Database.ExecuteSqlCommand();
+                var loaiphongName = new SqlParameter("@Ten", loaiPhong.LoaiPhongName);
+                _context.Database.ExecuteSqlRaw("EXEC dbo.spAddLoaiPhong @Ten", loaiphongName);
+                //    _context.Database.ExecuteSqlCommand();
                 return RedirectToAction(nameof(Index));
             }
             return View(loaiPhong);
@@ -92,7 +86,7 @@ namespace CaChepFinal2.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] LoaiPhong loaiPhong)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,LoaiPhongName")] LoaiPhong loaiPhong)
         {
             if (id != loaiPhong.Id)
             {
@@ -104,8 +98,8 @@ namespace CaChepFinal2.Areas.Admin.Controllers
                 try
                 {
                     var loaiphongName = new SqlParameter("@Ten", loaiPhong.LoaiPhongName);
-                    var loaiphongId = new SqlParameter("@id",loaiPhong.Id);
-                    _context.Database.ExecuteSqlRaw("EXEC dbo.spEditLoaiPhong @id,@Ten", loaiphongId,loaiphongName);
+                    var loaiphongId = new SqlParameter("@id", loaiPhong.Id);
+                    _context.Database.ExecuteSqlRaw("EXEC dbo.spEditLoaiPhong @id,@Ten", loaiphongId, loaiphongName);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)

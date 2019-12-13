@@ -8,10 +8,6 @@ using CaChepFinal2.Data.DataModel;
 using Microsoft.Data.SqlClient;
 using Microsoft.AspNetCore.Authorization;
 using CaChepFinal2.Utility;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Syncfusion.EJ2.Linq;
 
 namespace CaChepFinal2.Areas.Admin.Controllers
 {
@@ -110,7 +106,7 @@ namespace CaChepFinal2.Areas.Admin.Controllers
         }
 
         // POST: Admin/DichVus/Edit/5
-   
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Edit(int id, [Bind("Id,DichVuName,ShortDescription,Price,ImageUrl,InStock,LoaiDvid")] DichVu dichVu)

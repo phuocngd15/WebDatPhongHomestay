@@ -9,5 +9,6 @@ namespace CaChepFinal2.Data.DataModel
     public class ChiTietDatPhongHeap
     {
         public int PhongId { get; set; }
+  
     }
 }

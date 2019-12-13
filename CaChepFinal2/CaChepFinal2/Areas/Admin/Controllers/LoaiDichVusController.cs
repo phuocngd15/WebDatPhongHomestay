@@ -60,18 +60,18 @@ namespace CaChepFinal2.Areas.Admin.Controllers
         }
 
         // POST: Admin/LoaiDichVus/Create
-   
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("Id,Name,Description")] LoaiDichVu loaiDichVu)
+        public IActionResult Create([Bind("Id,LoaiDichVuName,Description")] LoaiDichVu loaiDichVu)
         {
             if (ModelState.IsValid)
-            { 
-               
+            {
+
                 var ten = new Microsoft.Data.SqlClient.SqlParameter("@Ten", loaiDichVu.LoaiDichVuName);
                 var mota = new Microsoft.Data.SqlClient.SqlParameter("@mota", loaiDichVu.Description);
 
-                _context.Database.ExecuteSqlRaw("EXEC dbo.spAddLoaiDichVu @Ten", ten);
+                _context.Database.ExecuteSqlRaw("EXEC dbo.spAddLoaiDichVu @Ten,@mota", ten, mota);
                 return RedirectToAction(nameof(Index));
             }
             return View(loaiDichVu);
@@ -97,7 +97,7 @@ namespace CaChepFinal2.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description")] LoaiDichVu loaiDichVu)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,LoaiDichVuName,Description")] LoaiDichVu loaiDichVu)
         {
             if (id != loaiDichVu.Id)
             {
@@ -111,7 +111,7 @@ namespace CaChepFinal2.Areas.Admin.Controllers
                     var loaidvuid = new SqlParameter("@id", loaiDichVu.Id);
                     var loaidichvuName = new SqlParameter("@Ten", loaiDichVu.LoaiDichVuName);
                     var mota = new SqlParameter("@mota", loaiDichVu.Description);
-                    _context.Database.ExecuteSqlRaw("EXEC dbo.spEditLoaiDichVu @id,@Ten,@mota", loaidvuid, loaidichvuName,mota);
+                    _context.Database.ExecuteSqlRaw("EXEC dbo.spEditLoaiDichVu @id,@Ten,@mota", loaidvuid, loaidichvuName, mota);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)

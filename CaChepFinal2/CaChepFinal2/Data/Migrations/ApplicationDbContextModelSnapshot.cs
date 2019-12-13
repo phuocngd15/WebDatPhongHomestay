@@ -279,12 +279,6 @@ namespace CaChepFinal2.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("AccountId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int?>("AccoutId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
@@ -310,8 +304,6 @@ namespace CaChepFinal2.Data.Migrations
                         .HasColumnType("Money");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AccountId");
 
                     b.ToTable("DatPhongs");
 
@@ -874,13 +866,6 @@ namespace CaChepFinal2.Data.Migrations
                         .HasForeignKey("DichVuId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("CaChepFinal2.Data.DataModel.DatPhong", b =>
-                {
-                    b.HasOne("CaChepFinal2.Data.DataModel.AccountSys", "Account")
-                        .WithMany()
-                        .HasForeignKey("AccountId");
                 });
 
             modelBuilder.Entity("CaChepFinal2.Data.DataModel.DichVu", b =>

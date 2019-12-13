@@ -134,6 +134,7 @@ namespace CaChepFinal2.Areas.Admin.Controllers
             {
                 try
                 {
+
                     var listChiTietDatPhongFromDb = _context.ChiTietDatPhongs
                         .FromSqlRaw($"EXECUTE dbo.GetChiTietDatPhongBy_IdDatPhong_IdPhong_ThoiGian @DatPhongId = {abfromView.DatPhong.Id} ,@PhongId ={id}")
                         .ToList();

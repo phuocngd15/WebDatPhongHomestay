@@ -78,7 +78,7 @@ namespace CaChepFinal2.Areas.Admin.Controllers
         // POST: Admin/Phongs/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("Id,Name,ShortDescription,Price,LoaiPhongId,ChuongTrinhId")] Phong phong)
+        public IActionResult Create([Bind("Id,PhongName,ShortDescription,Price,LoaiPhongId,ChuongTrinhId")] Phong phong)
         {
             if (ModelState.IsValid)
             {

@@ -62,7 +62,7 @@ namespace CaChepFinal2.Areas.Admin.Controllers
     
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("Id,Name")] TrangThai trangThai)
+        public IActionResult Create([Bind("Id,TrangThaiName")] TrangThai trangThai)
         {
             if (ModelState.IsValid)
             {
@@ -94,7 +94,7 @@ namespace CaChepFinal2.Areas.Admin.Controllers
        
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] TrangThai trangThai)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,TrangThaiName")] TrangThai trangThai)
         {
             if (id != trangThai.Id)
             {

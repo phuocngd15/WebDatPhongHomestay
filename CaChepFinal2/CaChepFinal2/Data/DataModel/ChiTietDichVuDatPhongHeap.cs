@@ -8,5 +8,6 @@ namespace CaChepFinal2.Data.DataModel
     public class ChiTietDichVuDatPhongHeap
     {
         public int DichVuId { get; set; }
+
     }
 }

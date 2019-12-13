@@ -61,7 +61,7 @@ namespace CaChepFinal2.Areas.Admin.Controllers
         // POST: Admin/ChuongTrinhs/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("Id,TenChuongTrinh,TiLeThayDoiGia,IsTang")] ChuongTrinh chuongTrinh)
+        public IActionResult Create([Bind("Id,ChuongTrinhName,TiLeThayDoiGia,IsTang")] ChuongTrinh chuongTrinh)
         {
             if (ModelState.IsValid)
             {
@@ -70,7 +70,7 @@ namespace CaChepFinal2.Areas.Admin.Controllers
                 var tang = new SqlParameter("@Tang", chuongTrinh.IsTang);
 
 
-                _context.Database.ExecuteSqlRaw("EXEC dbo.spAddChuongTrinh @Name,@Tile,@Tang", tenchuongtrinh,tile,tang);
+                _context.Database.ExecuteSqlRaw("EXEC dbo.spAddChuongTrinh @Name,@Tile,@Tang", tenchuongtrinh, tile, tang);
                 return RedirectToAction(nameof(Index));
             }
             return View(chuongTrinh);
@@ -95,7 +95,7 @@ namespace CaChepFinal2.Areas.Admin.Controllers
         // POST: Admin/ChuongTrinhs/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,TenChuongTrinh,TiLeThayDoiGia,IsTang")] ChuongTrinh chuongTrinh)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,ChuongTrinhName,TiLeThayDoiGia,IsTang")] ChuongTrinh chuongTrinh)
         {
             if (id != chuongTrinh.Id)
             {
@@ -110,7 +110,7 @@ namespace CaChepFinal2.Areas.Admin.Controllers
                     var ctId = new SqlParameter("@id", chuongTrinh.Id);
                     var tile = new SqlParameter("@Tile", chuongTrinh.TiLeThayDoiGia);
                     var tang = new SqlParameter("@Tang", chuongTrinh.IsTang);
-                    _context.Database.ExecuteSqlRaw("EXEC dbo.spEditLoaiPhong @id,@Ten,@Tile,@Tang", ctId, tenct,tile,tang);
+                    _context.Database.ExecuteSqlRaw("EXEC dbo.spEditChuongTrinh @id,@Ten,@Tile,@Tang", ctId, tenct, tile, tang);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)

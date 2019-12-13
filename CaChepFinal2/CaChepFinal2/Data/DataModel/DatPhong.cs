@@ -46,8 +46,8 @@ namespace CaChepFinal2.Data.DataModel
         [Display(Name = "Tổng Tiền")]
         public decimal TongTien { get; set; }
 
-        public int? AccoutId { get; set; }
-        public virtual AccountSys Account { get; set; }
+      //  public int? AccoutId { get; set; }
+      //  public virtual AccountSys Account { get; set; }
 
         public virtual ICollection<ChiTietDatPhong> ChiTietDatPhong { get; set; }
         public virtual ICollection<ChiTietDichVuDatPhong> ChiTietDichVuDatPhong { get; set; }
