@@ -11,9 +11,10 @@ B2: chạy file CaChepFinal2.sln để mở web
 Cách 2: 
 
 B1:  kt xem có tồn tại DB: [CaChepFinal3-HQT] trong SQL không, nếu có thì xóa
+
 B2:  mở file CaChepFinal2.sln 
-		B2.1: mở Package Manager Console và gõ Update-database. Package Manager 			
-		Console sẽ tạo DB bằng code first
+
+B2.1: mở Package Manager Console và gõ Update-database. Package Manager Console sẽ tạo DB bằng code first
 		
 B3: mở SQL SSMS xem  [CaChepFinal3-HQT] có chưa
 
